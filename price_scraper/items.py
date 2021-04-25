@@ -4,12 +4,12 @@
 # https://docs.scrapy.org/en/latest/topics/items.html
 
 import scrapy
+from scrapy.loader import ItemLoader
+from itemLoader.processors import TakeFirst, MapCompose
 
 
 class PriceScraperItem(scrapy.Item):
     # define the fields for your item here like:
+    date = scrapy.Field()
     name = scrapy.Field()
-    original_price = scrapy.Field()
-    discounted_price = scrapy.Field()
-    url = scrapy.Field()
-    pass
+    price = scrapy.Field()
